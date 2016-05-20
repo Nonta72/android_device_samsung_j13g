@@ -7,6 +7,21 @@ $(call inherit-product-if-exists, vendor/samsung/j13g/j13g-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/samsung/j13g/overlay
 
+# Set local path
+LOCAL_PATH := device/samsung/j13g
+
+# Init files
+PRODUCT_COPY_FILES += \
+        $(LOCAL_PATH)/rootdir/init.grandneove3g.rc:root/init.grandneove3g.rc \
+        $(LOCAL_PATH)/rootdir/init.grandneove3g_base.rc:root/init.grandneove3g_base.rc \
+        $(LOCAL_PATH)/rootdir/init.sc8830.rc:root/init.sc8830.rc \
+        $(LOCAL_PATH)/rootdir/init.sc8830.usb.rc:root/init.sc8830.usb.rc \
+        $(LOCAL_PATH)/rootdir/init.sc8830_ss.rc:root/init.sc8830_ss.rc \
+	$(LOCAL_PATH)/rootdir/ueventd.sc8830.rc:root/ueventd.sc8830.rc \
+        $(LOCAL_PATH)/rootdir/init.board.rc:root/init.board.rc \
+        $(LOCAL_PATH)/rootdir/fstab.sc8830:root/fstab.sc8830 \
+        $(LOCAL_PATH)/rootdir/init.wifi.rc:root/init.wifi.rc 
+
 LOCAL_PATH := device/samsung/j13g
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 	LOCAL_KERNEL := $(LOCAL_PATH)/kernel
