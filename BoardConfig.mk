@@ -22,7 +22,7 @@ BOARD_KERNEL_CMDLINE := console=ttyS1,115200n8
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 
-# fix this up by examining /proc/mtd on a running device
+# Fix this up by examining /proc/partitions on a running device
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x105c0000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x105c0000
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 0x105c0000
