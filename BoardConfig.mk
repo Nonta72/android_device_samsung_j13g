@@ -26,10 +26,7 @@ TARGET_PREBUILT_KERNEL                       := device/samsung/j13g/kernel
 BOARD_KERNEL_CMDLINE                         := console=ttyS1,115200n8
 BOARD_KERNEL_BASE                            := 0x00000000
 BOARD_KERNEL_PAGESIZE                        := 2048
-BOARD_KERNEL_OFFSET                          := 0x00008000
-BOARD_RAMDISK_OFFSET                         := 0x01000000
-BOARD_TAGS_OFFSET                            := 0x00000100
-BOARD_MKBOOTIMG_ARGS                         := --dt device/samsung/j13g/dt.img
+BOARD_MKBOOTIMG_ARGS                         := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --dt device/samsung/j13g/dt.img
 
 # Fix this up by examining /proc/partitions on a running device
 BOARD_BOOTIMAGE_PARTITION_SIZE               := 0x105c0000
