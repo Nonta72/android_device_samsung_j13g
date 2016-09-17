@@ -1,6 +1,11 @@
 import /init.j13g_base.rc
 import /init.wifi.rc
 
+# Assign TCP buffer thresholds to be ceiling value of technology maximums
+# Increased technology maximums should be reflected here.
+    write /proc/sys/net/core/rmem_max  1048576
+    write /proc/sys/net/core/wmem_max  2097152
+
 on boot
 #++latin_mm:lkj for MobileTV [ISDBT]
 service mobileTV /system/bin/broadcastProcessObserver_ltn
