@@ -20,7 +20,7 @@ on post-fs-data
     chmod 0664 /data/.ant.info
 
     # for WIFI Version
-    write /data/.wifiver.info 0
+    write /data/.wifiver.info
     chown system wifi /data/.wifiver.info
     chmod 0664 /data/.wifiver.info
 
