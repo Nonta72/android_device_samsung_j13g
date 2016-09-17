@@ -28,11 +28,12 @@ BOARD_KERNEL_BASE                            := 0x00000000
 BOARD_KERNEL_PAGESIZE                        := 2048
 BOARD_MKBOOTIMG_ARGS                         := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --dt device/samsung/j23g/dt.img
 
-# Fix this up by examining /proc/partitions on a running device
-BOARD_BOOTIMAGE_PARTITION_SIZE               := 0x105c0000
-BOARD_RECOVERYIMAGE_PARTITION_SIZE           := 0x105c0000
-BOARD_SYSTEMIMAGE_PARTITION_SIZE             := 0x105c0000
-BOARD_USERDATAIMAGE_PARTITION_SIZE           := 0x105c0000
+# Use decimal values to simplify things. cat proc/partitions then block*1024
+BOARD_BOOTIMAGE_PARTITION_SIZE               := 16777216
+BOARD_RECOVERYIMAGE_PARTITION_SIZE           := 16777216
+BOARD_SYSTEMIMAGE_PARTITION_SIZE             := 1572864000
+BOARD_USERDATAIMAGE_PARTITION_SIZE           := 5872025600
+#The following value is generic
 BOARD_FLASH_BLOCK_SIZE                       := 131072
 
 # TWRP Recovery
